@@ -13,7 +13,13 @@ int main(int argc, char **argv)
 	}
 	// get the source stream;
 	std::ifstream source;
-	source.open(argv[1]);
+	char* file = (char*)argv[1];
+	if (file == nullptr)
+	{
+		std::cerr << "no file has been entered\n";
+		exit(1);
+	}
+	source.open(file);
 	if (source.good() == true)
 	{
 		std::cout << "interpret code from: " << argv[1] << std::endl;
