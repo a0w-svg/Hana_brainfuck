@@ -3,7 +3,7 @@
 Hana::Hana(char code_br[])
 {
 	br_program = code_br;
-	data_p = data;
+	data_p = reinterpret_cast<unsigned char*> (&data_mem[0]);
 }
 
 void Hana::move_p_left()

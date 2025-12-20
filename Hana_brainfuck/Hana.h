@@ -1,11 +1,12 @@
 #pragma once
 #include <iostream>
+#include <vector>
 class Hana
 {
 private:
 	static const int length = 30000;
-	char data[length] = { 0 };
-	char* data_p = nullptr;
+	std::vector<unsigned char> data_mem = std::vector<unsigned char>(length, 0);
+	unsigned char* data_p = nullptr;
 	const char* br_program = nullptr;
 	// Move the pointer to the left;
 	void move_p_left();
